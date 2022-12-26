@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TuanKhanh</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../../bootstrap/css.css">
+</head>
+<body>
+<section>
+  <ul>
+    <li class="list active" data-filter="all">ALL</li>
+    <li class="list"  data-filter="CD">Conpart Disc</li>
+    <li class="list" data-filter ="CDR">Compart Disc Re-Writable</li>
+    <li class="list" data-filter ="CDRW">Compart Disc Re-Cordable</li>
+    <li class="list" data-filter ="USB">Universal Serial Bus</li>
+  </ul>
+  <div class="product">
+    <div class="itemBox CD"><img height="300" src="../img/dia.jpg"></div>
+    <div class="itemBox USB"><img height="300" src="../img/kioxia.jpg"></div>
+    <div class="itemBox CDRW"><img height="300" src="../img/cdr12.jpg"></div>
+    <div class="itemBox CDR"><img height="300" src="../img/cdrw2.jpg"></div>
+    <div class="itemBox CD"><img height="300" src="../img/cd3.jpg"></div>
+    <div class="itemBox USB"><img height="300" src="../img/usb1.jpg"></div>
+    <div class="itemBox CD"><img height="300" src="../img/cd0.jpg"></div>
+    <div class="itemBox CDRW"><img height="300" src="../img/cdr3.jpg"></div>
+    <div class="itemBox USB"><img height="300" src="../img/kioxia xanh.jpg"></div>
+    <div class="itemBox CDRW"><img height="300" src="../img/cdr5.jpg"></div>
+    <div class="itemBox CDR"><img height="300" src="../img/cdrw3.jpg"></div>
+    <div class="itemBox CDR"><img height="300" src="../img/cdrw4.jpg"></div>
+  </div>
+</section>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item disabled">
+      <a class="page-link">Quay Lại</a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#">Tiếp Theo</a>
+    </li>
+  </ul>
+</nav>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.list').click(function(){
+      const value = $(this).attr('data-filter');
+      if (value == 'all'){
+        $('.itemBox').show('1000');
+      }
+      else{
+        $('.itemBox').not('.'+value).hide('1000');
+        $('.itemBox').filter('.'+value).show('1000');
+      }
+    })
+    $('.list').click(function (){
+      $(this).addclass('active').siblings().removeClass('active');
+    })
+  })
+</script>
+</body>
+</html>
